@@ -6,11 +6,11 @@ const data = [
   {id:5, firstName:"Dateusz", lastName:"Mobija", marks: [2,5,2,5]},
 ]
 
-const gradeAverage = () => {
+const countGradeAverage = (data) => {
   const gradeAverage = data.reduce((accumulator, currentValue) => {
     return accumulator += currentValue.marks.reduce((prev, next) => prev + next) / currentValue.marks.length;
   }, 0) / data.length;
-  console.log(`Średnia wszystkich średnich z ocen to ${gradeAverage.toFixed(2)}`)
+  return gradeAverage
 }
 
-gradeAverage();
+console.log(`Średnia wszystkich średnich z ocen to ${countGradeAverage(data).toFixed(2)}`);
